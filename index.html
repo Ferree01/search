@@ -1,0 +1,55 @@
+<htmL>
+<button onclick="sliceWord()">run</button>
+<script>
+    //creating a search engine
+    
+    function sliceWord(){
+        var input = prompt("Enter a word");
+        input = input.toLowerCase();
+        
+        var inputArray = getInputArray();
+        
+        var lengthOfInput = input.length;
+        var notOverSlice = input.length;
+        
+        inputArray.push({input: input});
+        
+        while(lengthOfInput > 1){
+            var sliceNumber = 1;
+            var sliceVar = input.slice(sliceNumber);
+            
+            if(sliceVar != " "){   
+                inputArray.push({sliceVar: sliceVar});
+            }
+            
+            if(sliceNumber < notOverSlice){
+               sliceNumber = sliceNumber + 1; 
+            }
+            lengthOfInput = lengthOfInput - 1;
+        }
+        localStorage.setItem("inputArray", JSON.stringify(inputArray));
+        inputArray.push({notOverSlice: numberOfVars});
+        searchForMatch();
+        
+    }
+    function getInputArray() {
+	   var inputArray = localStorage.getItem("inputArray");
+        if(!inputArray) {
+  	         return {inputArray:[]};
+    }
+ 	    return JSON.parse(inputArray);
+}
+    function searchForMatch(){
+    var searches = ["hello", "bye"];
+    var run = searches.length;
+    var inputArray = localStorage.getItem("inputArray");
+        
+    while(){
+        if(inputArray.input == searches[i] ){
+           
+         }
+     }    
+  }
+    
+</script>
+</htmL>
