@@ -27,8 +27,8 @@
             }
             lengthOfInput = lengthOfInput - 1;
         }
-        localStorage.setItem("inputArray", JSON.stringify(inputArray));
         inputArray.push({notOverSlice: numberOfVars});
+        localStorage.setItem("inputArray", JSON.stringify(inputArray));
         searchForMatch();
         
     }
@@ -44,12 +44,12 @@
     var run = searches.length;
     var inputArray = localStorage.getItem("inputArray");
     var objectsTreid = 1;
-        
+      
     while(){
         if(inputArray.input == searches[objectsTreid] ){
            alert("found");
          }
-        else if(inputArray.input !=){
+        else if(inputArray.input != searches[objectsTreid]){
             objectsTreid = objectsTreid +1;
             //You can see
         }
